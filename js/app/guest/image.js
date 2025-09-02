@@ -50,14 +50,22 @@ export const image = (() => {
      * @returns {void}
      */
     const getByFetch = (el) => {
-        urlCache.push({
-            url: el.getAttribute('data-src'),
-            res: (url) => appendImage(el, url),
-            rej: (err) => {
-                console.error(err);
+        // Langsung load gambar dari data-src, fallback ke src jika gagal
+        const src = el.getAttribute('data-src');
+        loadedImage(src)
+            .then((img) => {
+                el.width = img.naturalWidth;
+                el.height = img.naturalHeight;
+                el.src = img.src;
+                img.remove();
+                progress.complete('image');
+            })
+            .catch((err) => {
+                console.error('Gagal load image:', src, err);
+                // fallback ke src placeholder
+                el.src = el.getAttribute('src');
                 progress.invalid('image');
-            },
-        });
+            });
     };
 
     /**
