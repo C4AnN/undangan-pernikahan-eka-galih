@@ -1,0 +1,58 @@
+# Documentation dan guide files (keep untuk backup)
+# CODE_OF_CONDUCT.md
+# SECURITY.md
+
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# Build outputs
+dist/
+public/
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# IDE/Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Git batch scripts (optional - uncomment if you don't want to share)
+# setup-git.bat
+# push-website.bat
